@@ -59,7 +59,7 @@ const projects = [
     title: "project 4",
     description:
       "This project is a comprehensive Content Management System (CMS) tailored for car service centers and factories. It enables seamless management of goods and services, warehouse control, and operational workflows. The platform focuses on efficiency, scalability, and user-friendly navigation, providing an all-in-one solution for managing daily business activities.",
-    stack: [{ name: "HTML 5" }, { name: "Vue 3" }, { name: "SCSS" }, { name: "Typescript" }, { name: "Pinia" }, { name: "React.js" }, { name: "SharedWorkers" }, { name: 'IndexDB' }],
+    stack: [{ name: "HTML 5" }, { name: "Vue 3" }, { name: "SCSS" }, { name: 'GraphQL'}, { name: "Typescript" }, { name: "Pinia" }, { name: "SvelteKit" }, { name: "SharedWorkers" }, { name: 'IndexDB' }],
     image: "/assets/work/thumb3.webp",
     live: "https://app.fixiq.pro/#/",
     github: "NDA",
