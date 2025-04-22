@@ -62,9 +62,14 @@ const experience = {
     "This section outlines my professional journey as a Software Developer, showcasing the roles, projects, and achievements that have contributed to my growth as a developer.",
   items: [
     {
-      company: "Umbrell Development B.V.",
+      company: "Master Dynamix",
       position: "Lead Front-End Developer",
-      duration: "2023 - Present",
+      duration: "2025 - Present",
+    },
+    {
+      company: "Umbrella Development B.V.",
+      position: "Lead Front-End Developer",
+      duration: "2023 - 2025",
     },
     {
       company: "DICEUS",
