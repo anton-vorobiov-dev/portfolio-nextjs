@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/select";
 import {
   FaPhoneAlt,
+  FaWhatsapp,
+  FaTelegramPlane,
   FaEnvelope,
   FaLinkedin,
 } from "react-icons/fa";
@@ -23,8 +25,20 @@ import { AnimatePresence, motion } from "framer-motion";
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone / WhatsApp / Telegram",
+    title: "Phone",
+    description: "(+385) 998 237 548",
+    isLink: false,
+  },
+  {
+    icon: <FaWhatsapp />,
+    title: "WhatsApp",
     description: "(+380) 635 214 373",
+    isLink: false,
+  },
+  {
+    icon: <FaTelegramPlane />,
+    title: "Telegram",
+    description: "@devrocket",
     isLink: false,
   },
   {
