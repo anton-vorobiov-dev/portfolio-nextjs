@@ -25,7 +25,7 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+380) 635 214 373",
+      fieldValue: "(+385) 998 237 548, (+380) 635 214 373",
     },
     {
       fieldName: "Experience",
@@ -323,9 +323,9 @@ const Resume = () => {
                     return (
                       <li
                         key={index}
-                        className="flex items-center justify-center xl:justify-start gap-4"
+                        className="flex gap-4"
                       >
-                        <span className="text-white/60">{item.fieldName}</span>
+                        <span className="text-white/60">{item.fieldName}:</span>
                         <span className="text-xl">{item.fieldValue}</span>
                       </li>
                     );
