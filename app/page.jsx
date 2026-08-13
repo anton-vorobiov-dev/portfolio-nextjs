@@ -1,48 +1,26 @@
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
-
-// components
-import Social from "@/components/Social";
 import Photo from "@/components/Photo";
+import Social from "@/components/Social";
 import Stats from "@/components/Stats";
-
+import { profile } from "@/lib/profile";
 
 const Home = () => {
-  // const handleDownload = () => {
-  //   const link = document.createElement("a");
-  //   link.href = "https://cv.djinni.co/6a/4df8978d4f6d389df321aaba2f0681/anton-vorobiov-resume-updated.pdf";
-  //   link.download = "anton-vorobiov-resume.pdf"; // Имя файла
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-    
-  // };
-
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Frontend Developer</span>
+            <span className="text-xl">{profile.title}</span>
             <h1 className="h1 mb-6">
-              Hello I&apos;m <br /> <span className="text-accent">Anton Vorobiov</span>
+              Hello, I&apos;m <br />
+              <span className="text-accent">{profile.name}</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages and technologies.
+            <p className="max-w-[640px] mb-9 text-white/80">
+              Senior frontend engineer with {profile.experienceYears} years of
+              experience building scalable, high-performance applications with
+              Vue, Nuxt, React, and TypeScript. I focus on modular architecture,
+              reusable systems, performance, and AI-assisted engineering.
             </p>
-            {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              {/* <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-                onClick={handleDownload}
-              >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button> */}
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
@@ -51,7 +29,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* photo */}
+
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Photo />
           </div>

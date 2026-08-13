@@ -13,8 +13,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "CV: Senior Frontend developer",
-  description: "Anton Vorobiov - Senior Frontend developer CV app",
+  title: "Anton Vorobiov · Senior Front-End Developer",
+  description:
+    "Portfolio of Anton Vorobiov, a Senior Front-End Developer specializing in Vue, Nuxt, React, TypeScript, and scalable frontend architecture.",
 };
 
 export default function RootLayout({ children }) {

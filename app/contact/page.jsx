@@ -15,43 +15,43 @@ import {
 } from "@/components/ui/select";
 import {
   FaPhoneAlt,
-  FaWhatsapp,
-  FaTelegramPlane,
   FaEnvelope,
   FaLinkedin,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
+import { profile } from "@/lib/profile";
 
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "(+385) 998 237 548",
-    isLink: false,
+    title: "Croatia phone",
+    description: profile.phones[1].label,
+    href: profile.phones[1].href,
   },
   {
-    icon: <FaWhatsapp />,
-    title: "WhatsApp",
-    description: "(+380) 635 214 373",
-    isLink: false,
+    icon: <FaPhoneAlt />,
+    title: "Ukraine phone",
+    description: profile.phones[0].label,
+    href: profile.phones[0].href,
   },
   {
-    icon: <FaTelegramPlane />,
-    title: "Telegram",
-    description: "@devrocket",
-    isLink: false,
+    icon: <FaMapMarkerAlt />,
+    title: "Location",
+    description: profile.location,
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "anton.vorobiov.dev@gmail.com",
-    isLink: false,
+    description: profile.email,
+    href: `mailto:${profile.email}`,
   },
   {
     icon: <FaLinkedin />,
     title: "LinkedIn",
-    description: "https://www.linkedin.com/in/anton-vorobiov-b72402106/",
-    isLink: true,
+    description: "linkedin.com/in/anton-vorobiov-dev",
+    href: profile.linkedin,
+    external: true,
   },
 ];
 
@@ -122,11 +122,11 @@ const Contact = () => {
                     <SelectContent>
                       <SelectGroup>
                         <SelectLabel>Select a service</SelectLabel>
-                        <SelectItem value="Web Development">Web Development</SelectItem>
+                        <SelectItem value="Frontend Architecture">Frontend Architecture</SelectItem>
+                        <SelectItem value="Vue and Nuxt Development">Vue &amp; Nuxt Development</SelectItem>
+                        <SelectItem value="React Applications">React Applications</SelectItem>
                         <SelectItem value="Performance Optimization">Performance Optimization</SelectItem>
-                        <SelectItem value="SEO Optimization">SEO Optimization</SelectItem>
-                        <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-                        <SelectItem value="Logo Design">Logo Design</SelectItem>
+                        <SelectItem value="Engineering Enablement">Engineering Enablement</SelectItem>
                         <SelectItem value="Other">Other</SelectItem>
                       </SelectGroup>
                     </SelectContent>
@@ -175,11 +175,11 @@ const Contact = () => {
                   <div className="flex-1">
                     <p className="text-white/60">{item.title}</p>
                     <h3 className="text-xl break-words">
-                      {item.isLink ? (
+                      {item.href ? (
                         <a
-                          href={item.description}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          href={item.href}
+                          target={item.external ? "_blank" : undefined}
+                          rel={item.external ? "noopener noreferrer" : undefined}
                           className="hover:underline hover:text-accent"
                         >
                           {item.description}

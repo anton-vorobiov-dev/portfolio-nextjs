@@ -1,24 +1,21 @@
 "use client";
 
 import CountUp from "react-countup";
+import { achievements, profile } from "@/lib/profile";
 
 const stats = [
   {
-    num: 7,
+    num: profile.experienceYears,
+    suffix: "+",
     text: "Years of experience",
   },
-  {
-    num: 9,
-    text: "Projects completed",
-  },
-  {
-    num: 14,
-    text: "Technologies mastered",
-  },
-  {
-    num: 3200,
-    text: "Code commits",
-  },
+  ...achievements
+    .filter((achievement) => achievement.suffix === "%")
+    .map((achievement) => ({
+      num: achievement.number,
+      suffix: achievement.suffix,
+      text: achievement.title,
+    })),
 ];
 
 const Stats = () => {
@@ -34,6 +31,7 @@ const Stats = () => {
               >
                 <CountUp
                   end={item.num}
+                  suffix={item.suffix}
                   duration={5}
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"

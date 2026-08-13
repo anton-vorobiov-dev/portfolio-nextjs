@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Frontend Architecture",
     description:
-      "Creating modern, responsive, and user-friendly websites using the latest web technologies. Ensuring high performance, scalability, and seamless user experiences.",
+      "Designing scalable frontend systems, microfrontends, shared component libraries, and maintainable application structures for complex products.",
     href: "/contact",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Vue & Nuxt Development",
     description:
-      "Designing intuitive and visually appealing interfaces that enhance user interaction and satisfaction. Focused on usability and innovative design principles.",
+      "Building and modernizing Vue and Nuxt applications, including Vue 2 to Vue 3 migrations, SSR, real-time features, and performance optimization.",
     href: "/contact",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "React Applications",
     description:
-      "Crafting memorable and professional logos that effectively represent a brand's identity and values.",
+      "Developing responsive React and Next.js interfaces, analytics microfrontends, data visualization, filtering, and reporting experiences.",
     href: "/contact",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Engineering Enablement",
     description:
-      "Optimizing websites to improve visibility and ranking on search engines, driving organic traffic, and enhancing online presence.",
+      "Improving delivery through code reviews, testing, CI/CD, team practices, and AI-assisted engineering workflows connected through MCP.",
     href: "/contact",
   },
 ];
