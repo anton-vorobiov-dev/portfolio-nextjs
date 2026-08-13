@@ -28,23 +28,23 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[calc(100svh-120px)] py-12 xl:min-h-[calc(100svh-152px)] xl:pt-8 xl:pb-12"
     >
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col items-stretch gap-10 xl:h-[clamp(500px,calc(100svh-220px),680px)] xl:flex-row xl:items-start xl:gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 xl:shrink-0">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="achievements">Achievements</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
-          <div className="min-h-[70vh] w-full min-w-0">
-            <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+          <div className="w-full min-w-0 xl:h-full">
+            <TabsContent value="experience" className="w-full min-h-0 xl:h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:h-full xl:text-left">
                 <div>
                   <h2 className="text-4xl font-bold">Professional experience</h2>
                   <p className="max-w-[700px] mt-4 text-white/60 mx-auto xl:mx-0">
@@ -53,7 +53,7 @@ const Resume = () => {
                   </p>
                 </div>
 
-                <ScrollArea className="h-[520px] pr-4">
+                <ScrollArea className="h-[520px] pr-4 xl:min-h-0 xl:flex-1">
                   <ol className="flex flex-col gap-5">
                     {experiences.map((item) => (
                       <li
@@ -88,8 +88,8 @@ const Resume = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="achievements" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+            <TabsContent value="achievements" className="w-full min-h-0 xl:h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:h-full xl:text-left">
                 <div>
                   <h2 className="text-4xl font-bold">Key achievements</h2>
                   <p className="max-w-[700px] mt-4 text-white/60 mx-auto xl:mx-0">
@@ -98,29 +98,31 @@ const Resume = () => {
                   </p>
                 </div>
 
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  {achievements.map((achievement) => (
-                    <li
-                      key={achievement.title}
-                      className="bg-[#232329] p-6 md:p-8 rounded-xl text-left"
-                    >
-                      <p className="text-4xl font-extrabold text-accent leading-none">
-                        {achievement.value}
-                      </p>
-                      <h3 className="text-xl font-semibold mt-5">
-                        {achievement.title}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-white/60">
-                        {achievement.description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+                <ScrollArea className="h-[520px] pr-4 xl:min-h-0 xl:flex-1">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {achievements.map((achievement) => (
+                      <li
+                        key={achievement.title}
+                        className="bg-[#232329] p-6 md:p-8 rounded-xl text-left"
+                      >
+                        <p className="text-4xl font-extrabold text-accent leading-none">
+                          {achievement.value}
+                        </p>
+                        <h3 className="text-xl font-semibold mt-5">
+                          {achievement.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-white/60">
+                          {achievement.description}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
 
-            <TabsContent value="skills" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+            <TabsContent value="skills" className="w-full min-h-0 xl:h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:h-full xl:text-left">
                 <div>
                   <h2 className="text-4xl font-bold">Technical skills</h2>
                   <p className="max-w-[700px] mt-4 text-white/60 mx-auto xl:mx-0">
@@ -129,7 +131,7 @@ const Resume = () => {
                   </p>
                 </div>
 
-                <ScrollArea className="h-[500px] pr-4">
+                <ScrollArea className="h-[500px] pr-4 xl:min-h-0 xl:flex-1">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {skillGroups.map((group) => (
                       <section
@@ -156,8 +158,11 @@ const Resume = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="about" className="w-full text-center xl:text-left">
-              <div className="flex flex-col gap-[30px]">
+            <TabsContent
+              value="about"
+              className="w-full min-h-0 text-center xl:h-full xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px] xl:h-full">
                 <div>
                   <h2 className="text-4xl font-bold">About me</h2>
                   <p className="max-w-[780px] mt-4 text-white/60 mx-auto xl:mx-0">
@@ -165,34 +170,36 @@ const Resume = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-[860px]">
-                  <section className="bg-[#232329] p-6 rounded-xl text-left">
-                    <h3 className="text-lg font-semibold text-accent">Details</h3>
-                    <dl className="mt-5 space-y-3">
-                      {contactInfo.map((item) => (
-                        <div key={item.fieldName} className="flex flex-wrap gap-x-3">
-                          <dt className="text-white/50">{item.fieldName}:</dt>
-                          <dd className="break-all">{item.fieldValue}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </section>
+                <ScrollArea className="h-[520px] pr-4 xl:min-h-0 xl:flex-1">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-[860px]">
+                    <section className="bg-[#232329] p-6 rounded-xl text-left">
+                      <h3 className="text-lg font-semibold text-accent">Details</h3>
+                      <dl className="mt-5 space-y-3">
+                        {contactInfo.map((item) => (
+                          <div key={item.fieldName} className="flex flex-wrap gap-x-3">
+                            <dt className="text-white/50">{item.fieldName}:</dt>
+                            <dd className="break-all">{item.fieldValue}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </section>
 
-                  <section className="bg-[#232329] p-6 rounded-xl text-left">
-                    <h3 className="text-lg font-semibold text-accent">Languages</h3>
-                    <dl className="mt-5 space-y-4">
-                      {languages.map((language) => (
-                        <div
-                          key={language.name}
-                          className="flex items-center justify-between gap-4"
-                        >
-                          <dt>{language.name}</dt>
-                          <dd className="text-white/50">{language.level}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </section>
-                </div>
+                    <section className="bg-[#232329] p-6 rounded-xl text-left">
+                      <h3 className="text-lg font-semibold text-accent">Languages</h3>
+                      <dl className="mt-5 space-y-4">
+                        {languages.map((language) => (
+                          <div
+                            key={language.name}
+                            className="flex items-center justify-between gap-4"
+                          >
+                            <dt>{language.name}</dt>
+                            <dd className="text-white/50">{language.level}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </section>
+                  </div>
+                </ScrollArea>
               </div>
             </TabsContent>
           </div>
