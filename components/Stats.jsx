@@ -10,7 +10,7 @@ const stats = [
     text: "Years of experience",
   },
   ...achievements
-    .filter((achievement) => achievement.suffix === "%")
+    .filter((achievement) => achievement.featured)
     .map((achievement) => ({
       num: achievement.number,
       suffix: achievement.suffix,
